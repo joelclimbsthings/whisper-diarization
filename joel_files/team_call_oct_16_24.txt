@@ -1,0 +1,103 @@
+Bartosz: Nice.  Traffic lights.  Ibrahim, would you like to start?  
+
+Ibrahim: Yeah, thank you.  Thank you.  So I'm yellow.  My work is green.  I started support rotation.  The only thing is I'm working in weird hours, not in like the usual hours.  But I joined the shadow session today and then I answered some tickets.  There are some learnings.  I mean, I'm trying to find something.  So tomorrow is when I have decided to look for tickets related to analytics.  So I have this planned out.  So maybe I'll have some more findings that are related to our project.  But so far, I've been trying to get used to this system, because it's a bit changed from what it was.  And the workflow has changed.  It's not, it's a bit changed.  So I'm trying to get used to it.  and some tickets.  I answered that I'm very comfortable with.  So that is how I usually start.  And tomorrow I'm going to spend specific, I'm going to search for specific tickets that has analytics or even something that we do.  So that is about me.  And I don't have like anything else, you know, commercial analytics right now, but I have a task assigned to me for next week.  So, but I'll try to do a read of that task this week.  So, work-wise I'm green, like personal-wise it's yellow, so that's about me.  How about you Nima?  
+
+Nima: Yeah, so I think green, a bit yellowish.  So I've been trying to take over one of the works that Frederick left pending before his AFK, which was to, it was a script to fix the WC order operational data table on .com, wt.com.  And so I think since it was a few months ago, a lot of things has changed and I think the welcome team about the issue and I just received the response this morning.  Seems like that this is no longer like a priority issue.  It was a blocker before, but it's no longer a priority.  So they said that it's only affecting like 1% of merchants who sync their data.  So I think I'll just leave it for later after we tackle the analytics project.  
+
+Bartosz: you will basically leave it for Rodri, because he's back on point of effect.  
+
+Nima: Yeah, that makes sense.  Yeah, and I also could tackle it right now, because I don't think there is anything much left in analytics, at least for the backend.  I was planning on doing some code reviews.  I think Joel has a PR on GitHub that needs review.  and uh yeah i don't think there's anything much left.  so i'll maybe start working on this one.  if there's not if my help isn't needed anywhere else.  
+
+Bartosz: yeah one thing that is always great uh is that just do some testing like end to end and just see how things look and make sure that.  uh yeah well we're gonna have an uh.  that would be later.  uh.  so uh Just a quick question.  You said that this doesn't look like a priority, so it looks like we don't have to work on it before the order attribution release.  This is something that can be taken.  Okay, perfect.  Okay, that's it.  
+
+Nima: Yeah, that's based on what the Vulkan team says.  It's only affecting 1% of versions.  And this is just like the inconsistency between the table on the remote side and the WPConf side.  So yeah, I think it could be left for Rodrik if it's not a huge priority.  So yeah.  And yeah, that's all for me.  Joel, you wanna go next?  
+
+Joel: Sure.  I'm pretty green, I would say.  I'm doing pretty well.  I think earlier in the week, I was kind of just feeling a little burnt out.  But I've been doing better over the last couple of days.  And yeah, I'm just trying to, I've got a few kind of minor UI issues that I'm going to tackle later today and for the rest of the week.  They're relatively minor.  I think I can knock them out pretty quick.  And they're just things like alignment.  And I need to figure out an error state.  screen that I was going to ask Anne about or somebody.  but we also have the screen that we were.  I saw that there was a dialogue about displaying the screen when we're syncing and we don't have the data available as opposed to empty charts.  but it looked like we were waiting on GAN for that potentially if I guess he's AFK for a couple days.  but if we need me to jump on that I can take a look at that too.  
+
+Bartosz: I actually assigned it to Ibrahim in the post I've prepared today, but I forgot that Ibrahim is on support rotation.  And I've assigned it to Ibrahim because I...  
+
+Ibrahim: That was next week, so you...  
+
+Bartosz: Yeah, it was till the end of next week, so I'm not sure how much time is required.  And yeah, I sent it to you because you said you would not mind to look into some of the UI things.  Yeah, but if you have capacity, then that would be probably a priority right now to have it in the flow.  
+
+Joel: Yeah, I'm trying to get some things out of the way that I've been neglecting self-feedback for the last year and a half.  But for the most part, I should have some bandwidth in the next couple of days to look at that so I can jump in.  
+
+Bartosz: I'm not very far from you in the self-feedback.  I should not be saying that because I'm technically a teammate and I should be on top of that.  Okay, yeah, I'm trying to get all your feedbacks sooner than mine, so yeah.  
+
+Brezo: Well, thank you.  
+
+Joel: Yeah, I can prioritize that over the more minor UI issues, so you can take a look at that.  
+
+Bartosz: Yeah, so yes, please take a look at that, and that will be really good to have, because we are actually getting ready to release the thing and see how it will happen.  What will happen?  Okay.  
+
+Joel: Well, sounds good.  And, uh, Brazil.  
+
+Brezo: Um, green, because we found an issue with full sync again.  Um, yeah, it doesn't work when jetpack protect is installed.  So, not the plug in only the module jetpack protect.  
+
+Bartosz: Could you explain to me what Jetpack Protect is?  
+
+Brezo: It's like, you know, they separated Jetpack because they said that it was bloated.  I don't know.  Maybe I'm wrong.  That's like my impression.  But it was separated in different plugins, modules, and Jetpack Protect is one of them.  And it's the one that scans the code and will alert you if they find something.  And I think it syncs some of the data like to check, I don't know, maybe users or things like that, but somehow it also syncs the orders, which I thought it was super weird.  And then when you accept one of the plans, like the free plan, it doesn't ask you any consent or anything like.  it just has some kind of connection with dot com.  but our plugin doesn't see the status connected.  so i guess it's like a different type of connection.  It has a different sync configuration than the plugin, the module.  
+
+Bartosz: I expected that there may be issues.  That's why I separated the fix for the sync into two parts.  One is understanding what needs to be done and how much time it takes and the other one was to actually implement it.  Okay, what do we go from from here?  Is it something that you will be working on or for me or together?  
+
+Brezo: so the the best is for the integers is the one that knows the the code.  but i finished the translations yesterday.  like i only need to change the name of the um command.  um so i can try to debug.  i have a hunch but i might be wrong because i don't know the code base.  that well okay so um Like, just in case I find something because she's not working until a few hours from now.  
+
+Bartosz: Okay, so this time box, your investigation,  
+
+Brezo: and  
+
+Bartosz: if you can politely ask for any, if she will be actively working on it right now, or you need to push some strings to have them working on it, or because in the worst case scenario, we need to at least notify Go and other people that there is a Block 8.  
+
+Brezo: Okay.  
+
+Bartosz: Because this effectively blocks because it's not about the pressable, it's about every single site that has this module.  Yes, this is what I said.  
+
+Brezo: Okay, timebox to what?  
+
+Bartosz: Well, you said if you have a hunch, verify the hunch and basically that's it.  And actually, I was thinking that there is, since you are on the backend and the API side, there is a nice task coming our way.  And if you want it, it's a integration with Metaedal.  
+
+Brezo: Okay.  
+
+Bartosz: Yeah.  
+
+Brezo: Yeah.  
+
+Bartosz: Yeah.  So that's, that's, that's one thing.  And, uh, yeah.  Well, that's we can talk about it later.  Because I think it's gonna, I was wondering if it's gonna affect the sync you are working on because we will.  How do you say that?  The schema of the payment will rely on what we sync because we're going to evaluate the number of products, orders and everything.  So it's related to the sync.  
+
+Brezo: Okay.  
+
+Bartosz: Maybe it's not.  Maybe we just query what's in the tables and that's it.  And it has nothing to do with the sync.  or you can do it at the sync level.  I don't know.  Just this is why I thought that you probably will be able to look at it.  I will have a task for it soon.  
+
+Brezo: Okay.  Nice.  
+
+Bartosz: Yeah.  Yeah.  Okay.  Anything else?  Okay, so I would say I'm green.  There are some questions coming from all over the place when we release and I just tell everybody just wait.  It will happen soon.  And people are waiting, which is nice.  And yeah, besides that, I'm just trying to organize work and figure out if everything is going according to plan.  I decided to do some coding, so I've built a tool in our common status tools that triggers the full sync.  So, we have now the option to do that.  Yeah, I'm having the code.  I will have the PR tomorrow and I will.  Yes, it was not very complicated.  The tool systems.  Yes, it will be part of the Commerce Analytics plugin.  You start the plugin and when you have the connection, a tool is available.  So you can go there and click it.  And it's going to be like a fail-safe device where we're going to send everyone with problems.  Have you tried to the sync to data?  Yeah.  
+
+Ibrahim: There was one design feedback that I got from the head cheese that I've already shared with Justin and Bartosz as well.  It would make sense to actually show when we made the last successful sink or full sink or whatever sink because it is because they.  He told me that this kind of issues happened when there is a discrepancy in the data.  that is being shown in the local site and that is there in the reports.  For example, we have 2,000 orders here and 1,000 orders there.  So we need to show that sync is, I mean, some kind of a date stamp when the last sync happened or something like that.  
+
+Bartosz: Yes.  I wonder if it's actually.  So, in theory, we don't need it.  Correct.  Because because in theory, full sync doesn't take a role in data integrity, because checksums should do that.  But I understand that.  Yeah, that's just a wishful thinking.  And yeah, having a timestamp somewhere would be interesting.  
+
+Brezo: Don't we have that already?  Like the sync status that we have on the hosted analytics?  
+
+Bartosz: Yes, but that when you enter will be gone.  
+
+Brezo: Oh, OK.  
+
+Ibrahim: OK.  Yeah.  Yeah.  
+
+Bartosz: That's that's that's development.  Yeah.  That's just we're going to keep it.  We're just going to hide it behind a flag so you can have it.  OK.  Local development.  So, yeah, maybe maybe maybe I could just add that info to the tool.  All right.  
+
+Ibrahim: That's that's where I think that it is.  It makes more sense.  
+
+Brezo: And just say the last thing was to get some message.  And then you also see what was synced inside, so it's also helpful for debugging.  Yeah, yeah.  
+
+Bartosz: OK, OK, that's that's that's that's nice feedback.  I will work on that.  I think that's it from my side and we have nothing on the agenda, so.  If there's anything else you'd like to discuss, we can do it now, or you can ping me always on Slack.  And if that's it, we can close the call and have a great rest of the day.  Yeah.  Yeah.  
+
+Ibrahim: Yeah.  
+
+Joel: Nothing from me.  
+
+Bartosz: Well, if you want.  Okay.  There's nothing.  Yeah.  All right.  Rest of the day.  
+
+Nima: Thank you.  
+
+Ibrahim: Thank you everybody.  Thanks all.  Have a good week.  

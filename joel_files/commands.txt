@@ -1,0 +1,11 @@
+micromamba env remove -n whisper-diarization
+micromamba create python=3.10.13 -y -n whisper-diarization
+micromamba activate whisper-diarization
+micromamba update ffmpeg
+ 
+ffmpeg -i team_call.mkv -vn -acodec pcm_s16le -ar 44100 -ac 2 team_call.wav
+ 
+pip install nvidia-pyindex          
+pip install nvidia-cudnn
+
+python diarize.py -a ./team_call.wav
