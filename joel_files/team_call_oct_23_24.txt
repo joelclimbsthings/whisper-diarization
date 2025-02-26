@@ -1,0 +1,305 @@
+﻿Bartosz: with Warren and everything worked and Warren was pretty happy.  But that was one site and one site and any other site that Garrett tried later didn't work.  so.  
+
+Brezo: Was it a new site?  
+
+Bartosz: No, they were old sites.  So probably there's something here.  
+
+Brezo: There's a setting.  so You know that the sync only works if it's the first installation of the plugin.  
+
+Bartosz: Yes.  
+
+Brezo: So if it didn't work before, there are chances that it's not gonna work.  
+
+Bartosz: Okay, so how do we make sure that we reset this setting?  
+
+Brezo: I don't know.  Yeah.  
+
+Bartosz: Because I understand somebody installed the plugin, they have it on for two days, they don't like it, they disable it, remove it and they reinstall it half a year later and it doesn't work.  So it would be nice to have a way to, I don't know, restart the process, at least internally.  I kind of think that the process of the full sync should be entirely orchestrated by the plugin.  
+
+Brezo: the the problem when we tried that because that was the first approach that we had is that the plugin there's a lot of things that it doesn't know about what's going on in dot com and that's why i think uh vulcan decided to move it to dot com.  
+
+Bartosz: yeah i understand that and i i'm not saying that's the wrong step.  so i just feel that the dot com it doesn't know when we should have the full sync.  actually it doesn't know it's it's the plugin that knows and and yeah and i i struggle a bit with that.  
+
+Brezo: yeah Yeah, maybe we need to have like a call with Vulkan.  Think about the cases when we think we need the full sync and it's not happening.  
+
+Bartosz: I agree and this is the correct step.  We should have a call with Vulkan.  And maybe it's easy because I was building the tool to trigger the signal and then did you want I need to figure out what I was doing wrong.  It didn't work.  Yeah, so like I was clicking the button, I was triggering the sync, but it was not scheduled.  So I'm assuming that I did something wrong.  I need to redo it.  Because if that would work, then probably we could reuse that.  
+
+Brezo: Yeah.  Were you checking locally on your local site?  
+
+Bartosz: I was checking locally, I think.  
+
+Brezo: Yeah, because the full sync function is going to check a lot of stuff before it triggers, so it's going to check if Jetpack is connected, if you are offline, like if it's a local host address it's not going to trigger.  
+
+Bartosz: It's this local, it's not going to trigger at all.  OK.  
+
+Brezo: Yeah.  So things like that.  So if you go inside of the code for because it happened to me also, like why is this not triggering?  So there are also like some type of domains that they identify as local and it's not going to trigger.  
+
+Bartosz: So, yeah, I'm making a note.  Okay, so I will just basically check my collection should work on Jurassic.  
+
+Brezo: Yes, he should work on Jurassic.  Yeah.  
+
+Bartosz: Okay.  Okay.  So, yeah.  Okay, great.  So I. I don't think really that we have anything else to discuss regarding the sync issues except having the call with Volcom.  
+
+Brezo: What about the loading screen?  
+
+Bartosz: What about the loading screen?  Justin will be looking into it tomorrow and maybe there is something that we can figure out at least initially.  how to How to check for that state?  We should still ask Vulkan what's happening, what is happening exactly.  Well, I do think that my guess is that the first thing is just...  
+
+Brezo: Connecting.  
+
+Bartosz: Yeah, it's a way for jetport.com to get some information about the site.  Yeah.  And I don't know why it's called full sync.  
+
+Brezo: yeah i don't know.  and maybe there's a way to identify it like this is not.  yes this is not what we need.  
+
+Bartosz: yeah yeah.  so uh tomorrow justin will be looking into that.  um okay will be.  i will also be looking into that.  i i've connected my site a fresh site today and it worked.  uh i was happy but this thing goes slow it it helps.  
+
+Ibrahim: yeah what?  
+
+Bartosz: what part is slow like like I had 100 orders and it started like one minute late 10 minutes later of course and it took like 10 minutes.  
+
+Brezo: Yeah for 100. that sounds same as what I have experienced.  The other thing to check part of is that it works with a cron so the site needs to have activity.  
+
+Bartosz: Yeah so this is what I was asking Kan about today or yesterday.  so if The loading screen is opened.  We check the status every three seconds.  So we are actually creating requests.  So the cron should be doing something every three seconds.  You have about 10 minutes for 100 orders.  What if a site has 100,000 orders or a million orders?  
+
+Brezo: Do we know what we are expecting?  
+
+Bartosz: Yeah, like, so it's, I don't know what we are expecting.  I would say like for a million orders, I would hope a day at most.  
+
+Brezo: Million orders.  Okay.  
+
+Bartosz: Yeah.  
+
+Brezo: So then we need to test that.  Yeah.  We haven't done that because I think I've done a thousand the most.  
+
+Bartosz: And how much time did it take, roughly?  
+
+Brezo: Roughly, I don't remember but I think it was less than an hour.  
+
+Bartosz: So it's a thousand orders, it's less than an hour.  So let's assume it's an hour.  So one million orders is one thousand hours.  That's a lot.  
+
+Brezo: Yeah, because I wouldn't, yeah.  I don't know, I think like one day it's okay to wait, let's say come back in 24 hours.  
+
+Ibrahim: 1000 hours is 42 days.  
+
+Bartosz: It's 42 days, it's over a month.  
+
+Brezo: Yeah.  Yeah.  So I think we need to test that and then work with Ajay back to fix it.  
+
+Bartosz: Yeah, Gary will be ecstatic.  
+
+Brezo: Maybe it doesn't take so long, you know, because I don't know.  
+
+Ibrahim: Shouldn't take so long.  
+
+Bartosz: Yeah, that's the thing.  Like, if you have a blog, how many posts do you have?  Not that much, probably.  When you have a store, then you have products, orders, like many, many more posts.  So, yeah.  So, we need to test, we need to see what happens and then we need to adjust the backend and make it work.  I don't know.  Well, I know.  We have no choice.  
+
+Brezo: Yeah, we have to make it work.  So, how long do we have until we release the MVP?  
+
+Bartosz: MVP?  Couple of months.  
+
+Brezo: Couple of months.  I guess we should be working on this.  
+
+Bartosz: Yeah, I think it's a couple of months and for sure we'll work on backup.  Yeah, I would love to make a request like, please move Foteini to our team.  
+
+Brezo: Yes, she is amazing.  
+
+Bartosz: Yeah, yes, yes, yes.  So I don't know Foteini or maybe Igor Zinorviev also, he could be.  yeah but that's that's just guessing like for the would be.  
+
+Brezo: it would be great yeah but that yeah and she's also really nice to work with.  
+
+Bartosz: so yeah so you know you know what's good.  i will not make that request and see what happens.  
+
+Brezo: go for it.  
+
+Bartosz: we will give them Dima for one month.  He'll have fun.  He said that he was going to.  Maybe you don't get him back, be careful.  Yeah.  So he told me, I think I can show that he feels very lucky today because he got his temporary teeth.  Nice.  Yeah.  He can smile.  or two.  The footage that he shared looked very scary.  It looked very scary.  It looks absolutely scary.  
+
+Ibrahim: He was laying on the ground for like a good couple of minutes.  
+
+Bartosz: So he will have implants all over the place later on, but now he has a temporary solution.  Yeah, but that's, yeah, I'm showing that because he told me like he's super happy.  Great for you.  Well, I'll meet next time.  I've told him that so.  Yeah, he's very upset that he didn't get a helmet.  Okay, let's not talk about him.  
+
+Ibrahim: Dima is AFK, but he's releasing, I mean, he's releasing Pinterest, so I mean, I was, he released Pinterest already.  
+
+Bartosz: Yes, yes, he is AFK, and I told him to be AFK, and I've encouraged him to take as much time off as he needs, but he told me that he's just bored, so.  And I get it.  So I stepped back from the Pinterest work and I let him finished and he just finished everything and registered.  And yeah, and he told me like this, like he feels good about it.  So, yeah.  I never thought that a recent Pinterest can have a therapeutic effect on anybody.  Okay, so that's one thing.  Yeah, I don't think we have really anything else to discuss except the sync and probably check what's on the agenda.  Oh, Joel, I noticed one thing in the UI that I don't know if it's something that we need to fix or not, especially when we'll have the new screens and it's super, super, super minor.  I just was curious about, there is a table at the bottom and if you reduce the width of the browser, you get those, how do you call it, not shades.  No, no, no, no, no.  It's not a shade.  When the content of the table stops to fit inside the width, we add this effect at the sides.  What do you call it?  
+
+Joel: Is it like a box shadow kind of thing or?  
+
+Bartosz: Yes, yes, yes.  Inside box shadow.  Yeah.  And so you can see that it's actually something.  is there like an ellipsis for the content of the.  Yeah, and I've just noticed that when you reduce the width, you see those shadows, but you when you go back, they are still there.  
+
+Joel: Oh, gotcha.  
+
+Bartosz: Yeah.  
+
+Joel: Okay, yeah, I'll take a look at that.  
+
+Bartosz: As I said, this is just super, super minor.  I'm just mentioning because I was curious, how do you name those things?  
+
+Joel: Yeah, no, let's get nitpicky.  This is the time.  
+
+Bartosz: Yeah.  
+
+Joel: And I was just doing some styling tweaks earlier in the week, so I can just throw that on one of my PRs.  
+
+Bartosz: Okay.  Okay.  And yeah.  So, Next week, Rodrik starts.  Yeah, it was super fast.  And yeah, he will probably need a week or more to get back into working condition, because it's never easy after two months.  And yeah, that's one thing.  The other thing is that I've sent a lot of questions to everybody in the Slack channel today.  and the deal is that you don't have to answer or you can pick the other questions you want to answer and there is no agenda behind it.  I just, it's for me, it's purely for me, there's nothing behind that question except I'm curious.  and Well, the agenda is that if there are things, then we can make them work and fix and adjust for you.  So that's the agenda.  But it was not prompted by HR.  It was prompted by Jason.  It's just me.  Yeah, I was kind of curious why everybody stayed.  Yeah, so I actually wanted to understand if there's anything that made you stay and what can actually make or continue to do so.  you'll stay for a bit longer.  Yeah, and that's it.  and Is there anything you would like to discuss?  
+
+Joel: One thing I can't remember whether I mentioned this on the team call last week.  I have a support rotation coming up in a couple of weeks and I don't know if I've actually told anybody that directly on the team.  And I'm not sure if you're notified when I like schedule it.  
+
+Bartosz: I'm not and I honestly don't care.  You just do it.  We have to do it.  But we do have this page.  Let me share the page.  Give me one moment.  
+
+Ibrahim: I think Justin created a page or post something like that.  
+
+Joel: OK.  
+
+Bartosz: Yes, you can add your entry there.  Maybe it was created before you joined.  I don't know.  Yeah, or later.  Yeah, so we can add.  I need to update my dates because I always schedule my support rotation at the end of the year for whatever reason.  I think that during Christmas, people don't want too much support.  So please add your dates there and.  
+
+Joel: Perfect.  I can do that.  
+
+Bartosz: So we have to do it.  So we do it and there's nothing that I can do to stop you.  And I don't want you and I don't want to stop you.  
+
+Joel: If you can, I welcome you to stop me.  It's not like my favorite week of the year.  
+
+Bartosz: Trust me, I've tried it for myself.  It didn't work.  
+
+Ibrahim: I actually like support rotation.  So for me, it's something I look forward to at the end.  The only thing that I still don't get is the payments queue.  So it's kind of, I really don't understand anything about the payments queue.  But the code queue is, it's good.  I enjoy answering the code queue questions.  
+
+Brezo: Yeah.  Yeah.  Yeah, what I don't get is this.  I don't know if you've seen that.  I don't know how we got there.  
+
+Ibrahim: It's a bit complicated, that one.  
+
+Brezo: How did we get there?  
+
+Bartosz: The first question is, is it a precise question?  So it's not even about the support anymore.  
+
+Brezo: Are they paying?  Can we sell them something?  Yeah.  But it's not only that.  I don't know.  
+
+Joel: Yeah.  This might take me a week to grasp what this is.  
+
+Bartosz: Start here.  Yeah, it's a... provide support for that extension within scope and it doesn't explain the scope.  
+
+Joel: Are we still anticipating a deadline at the end of this week?  Is that still what we're shooting for?  
+
+Bartosz: Honestly, with the issues with the sink?  No.  I don't think we want to hit it unless something magical will happen.  We still have to basically state at the paid somewhere that this is not like a polished product, that this is something that a demo and yes, in progress was proof of concept.  So people will not get their hopes up.  And yeah, I've talked with Gary and I think I have to reiterate that because it's an important concept to make everyone understand that this is not the product.  
+
+Ibrahim: That will also make products like a lot of people will hesitate to use it on their production sites.  
+
+Bartosz: Yes, that's true and we can make mention that.  We will not break any.  well, we can break sync and other stuff.  It's yeah.  
+
+Ibrahim: And we can tell what to expect, so we can still have it on production sites.  
+
+Brezo: We don't know how it can affect a live site, right?  If it has a lot of folders and suddenly it starts syncing everything.  
+
+Bartosz: Yes, that's true.  And this is also the reason why we wanted to release it.  Because we would not want to learn those things with MVP.  I want to let them know.  Yeah.  So, yeah, we have to release it.  Probably in the form that will allow us to understand and find a lot of bugs and mistakes in our assumptions.  So, I don't know if the deadline are ready right now.  I need to talk to Gary.  basically have a list of to-do items and every second one has something to do with Gary, so he's probably very annoyed by that right now.  I think his list is the same, but with my name.  Yeah, so I will talk to Gary, I will asked for thinking about the call.  uh rez or what time can who's calling the call?  
+
+Brezo: so john i can start.  so i think so i usually start working at 8 30 but i can start one hour earlier 7 30 in my time which is What is the time right now?  
+
+Ibrahim: 10.56.  10.56, okay.  And then I'll pass from earlier from now.  
+
+Brezo: Yes, so 12.30 PM UTC.  
+
+Bartosz: Well, 30 p.m.  
+
+Brezo: UTC.  
+
+Bartosz: Okay, so this is what I will ask.  Okay, so that's the end.  So that's one thing.  The other thing is Dr.  Perry.  Yeah, that's it.  Overall, I really enjoy looking at the plugin.  It looks sleek.  I yeah it's like on the first glimpse it doesn't look too different from the old one but when you start looking at it there are like hundreds of details that made it look much more polished and much nicer.  and yeah i really enjoy it.  
+
+Brezo: it's just overall much better today yeah but also let's not forget that it works for new orders like we are saying now full sync full sync.  but you know, when they start using it in a month, they could also have stats even without the full sync.  
+
+Bartosz: Yes, yes.  All the orders will work.  
+
+Ibrahim: Yeah, everything comes in.  I mean, any orders that comes in after the plugin is installed, it's safe, they are safe.  
+
+Bartosz: That's actually an interesting concept, because we could just release it today and say, hey.  
+
+Ibrahim: Yeah, yeah, we can say that.  We can simply say that we can guarantee the accuracy for others placed after the effort installation.  And because of the installation, it might take some time to get over to our system.  
+
+Joel: 42 days.  
+
+Brezo: Slowly you'll be getting your data.  
+
+Joel: Something they look forward to every day.  
+
+Brezo: But when was all the attribution implemented?  It's not like it goes back in time till forever.  
+
+Ibrahim: I think it was 8.4 or something like that.  
+
+Bartosz: At the beginning of the year, I think.  
+
+Brezo: Yeah.  Same as HPOS, right?  It's not like it's been there forever.  
+
+Bartosz: Yeah, it's not, it has not been developed.  Well, it doesn't matter because HPOS migrates the orders.  So, you have all the orders from... Yeah, yeah, yeah, true, true.  
+
+Ibrahim: So, O, 8.5, order revision.  
+
+Bartosz: O, 8.5, which is Jan 9, 2024.  So nine months of other attribution data.  That's that's that's a lot.  Basically, at the beginning of the year, that's the one year.  
+
+Ibrahim: So I think million orders is.  I mean, for our attribution, we don't need we cannot have million orders this for sure.  I don't think any site will be having any orders in one year except for stores like WooCommerce.com.  So from my experience, this is spike that I did while testing for the performance.  So the most common is for big stories like 10,000 orders every year.  So we're going to like, if you explained it doesn't notice, I think you can say that those are not as physical store.  So most physical stores, they have like up to 10,000 orders.  And this is, and WooCommerce.com is having, it's processing a hundred thousand orders every month.  So WooCommerce.com is, is an exception.  It's not the norm.  So I think for, for like 90% of the, of the websites, it's going to be like within.  There's been 1,000 orders at max for 1 year.  
+
+Brezo: Hi, I wonder if we.  If we could check with for Danny, if we could limit the sink to.  Yeah, 1 year, so past year of analytics, because it's also going to save space in, um, dot com.  
+
+Ibrahim: So, it was hard to question that that that that actually, uh.  that came up while discussing with Anne during the design.  So we don't know the order.  I mean, I think Yuan must share the order in which the orders are processed.  So I think they are processed by order ID.  I think that is what he said.  I mean, it is what I can, I will correct, but I may be wrong here.  So I think if there's an option of filter that we can overwrite, just change the order in which the orders are processed.  We can start from the last one when from the order data PSC and then process from there.  
+
+Bartosz: Yeah, but it's... Well, this is going to be hard because we don't know which.  Is it a sync for Jetpack?  Just Jetpack, or this is a sync for us?  
+
+Ibrahim: Like it's a realistic sync.  So this is what we can ask them.  We can ask them if we can.  So if full sync is processing a queue, and we are putting items in the queue in a specific order, we just have to ask them if we can override the order or filter the order.  I mean, the items in the queue in some way or other.  that would like help us speed up the process.  We can just process in the last one year's order first, and then we can have others.  Because order attribution is irrelevant for orders coming in before Jan 9.  
+
+Bartosz: I think all the sync processes start at the lowest number and continue upwards because if the orders are created after you start the sync, they will still be part of the sync.  So I think we have to have a call with Fotahini and discuss those things.  And yeah, I will try to schedule something probably for, I don't know, tomorrow or the day after tomorrow.  I know it's Friday, but yeah.  
+
+Ibrahim: We can also have you one month.  so if we were.  
+
+Bartosz: I mean, additionally, if they have available.  So, I like conceptually.  I would love if we could avoid limiting the sync just to our orders.  I would get everything because then it would allow us to operate better on the data later.  
+
+Ibrahim: Correct.  
+
+Brezo: Okay.  
+
+Ibrahim: I mean, we don't have to limit the orders, but the order in which they are processed, I think we can change that.  Instead of going to the lowest, we can just start with the date weighted.  
+
+Bartosz: Yeah.  Yeah.  We can discuss that and see what's possible.  
+
+Joel: Has anybody considered the really big stories, just sending us a flash drive with all their orders?  
+
+Bartosz: Yeah.  That would be nice.  So I think there are situations, I don't know exactly, but there are some plugins that do something or even commerce where there were suggestions that you should run a script on your local machine just to do everything via WPC-LI.  Yeah, which is also, I don't think it's possible, but like having a failsafe, like somebody tells us like I have a store that has two million orders and we say, hey, this will not work automatically.  You have to, if somebody has a store that has two million orders, they have an admin that understands with WCLI.  So they could do that.  So listen, I should not say that out loud, but I do believe that we're going to fail miserably and often with the order attribution.  And that's good because we will learn and this is what we need for the MVP.  And I honestly do believe that there will be caveats and issues and all over the place.  Yeah.  And that's good because we will learn and we need that for MVP because MVP is the MVP product.  
+
+Ibrahim: Yeah.  
+
+Bartosz: Yeah.  So I'm not worried too much and I just want Warren and Paul to understand that.  
+
+Ibrahim: Yes.  I think that is, that is, that is, uh, I mean, uh, that is a really, uh, uh, a good point.  So we need, we need, we need, uh, we need the cushion to fail.  Yeah.  or if we fall down, we need time to get back up.  So you should not be punished for failing.  
+
+Bartosz: I know it's cliche, but if you are not failing, then it means that you're not trying enough.  
+
+Brezo: Do we need a way to stop the sync, maybe?  Like say, whoa, this is affecting my site, stop.  
+
+Bartosz: Yeah, uninstall the plugin?  
+
+Brezo: Yeah.  I don't even know if you can do that, like if you can stop the full sync.  that has that.  
+
+Bartosz: This is a question that we should have tomorrow or the moment when you have the call.  Justin made me realize that we didn't do the traffic lights.  Yeah.  Ibrahim, would you like to start?  
+
+Ibrahim: Yeah, I'm green.  I'm working on photo rotation, answering questions from different countries, TikTok, and even mobile games.  They're asking about commercial analytics.  So most of my days, I'd like answering questions.  And I'm also keeping it to an issue that HC posted in products filters.  And today, I started with standard testing with Google Analytics.  It's going to take some time to retest them.  So that will be the rest of the week.  It is about me, about Jupyter.  
+
+Brezo: I'm doing the support rotation and realizing that I don't know anything.  Because it's been four years since I did any support on WooCommerce, and it has changed a lot.  So I'm trying to pick up things from our plugins, but I haven't also worked with them.  So it's like, whoa, OK, Pinterest not connecting, Facebook not connecting.  
+
+Ibrahim: I mean, you should not choose our plugins if you want to start.  
+
+Brezo: Yeah, tomorrow I might do core.  Like the first thing, the first day I did whatever.  Yeah.  
+
+Ibrahim: You played into?  
+
+Brezo: I play skip, skip, skip also because I don't have yet messaging access.  So most of the tickets you can't reply.  That's about me.  I'm looking forward for it to finish.  Joel?  
+
+Joel: Yeah, I am green for the most part.  I'm a little more yellow now that I'm remembering my support rotation is coming up.  I have done this every time and I've yet to find the tickets that I knew what was going on.  And so I will continue my efforts to figure out what narrow slice of tickets, I might actually know what's going on.  But yeah, this week's been fine.  I've just been doing some cleanup with the reports, including some CSS and aligning some components, which I should have added a trigger warning to that PR with the alignment PR.  And now I'm just looking at, yeah, having like an error state.  I don't know, you may have seen, I'm having some conversation with Anne in terms of what an error state would look like.  Just to catch anything like data that's unexpected might throw an error.  And right now that just basically results in empty components without any messaging or anything.  So we're just gonna throw some kind of generic error state on there.  Yeah, I think that's pretty much the only thing that we have in our agenda on the UI side that we're considering essential for, for the actual launch.  So yeah, and I now have another issue that Bart brought to my attention earlier, so I'll take a look at that.  But yeah, honestly, if anybody's looking at the reports and they see anything, just let me know.  I can just kind of throw some tweaks here and there.  And it would probably be good for us to like, I don't know if we have thought about doing like a call for testing or anything like that, but it'd be good just to get more eyes and smoke testing on it.  
+
+Bartosz: Yeah, so actually the call for testing has been scheduled and it was for the beginning of this week, but we've discovered more and more issues with the sink, so we don't want people to test it with sink issues.  So when we resolve those, we will have a call for testing.  Okay.  
+
+Joel: Sounds good.  
+
+Brezo: Joel, there's one thing that is really nice about the support rotation is that you forget a little bit about the alignment, because that people, they don't care.  They're just working on their stores.  
+
+Joel: Yeah, for sure.  You can just join their world a little bit, which is probably refreshing.  Yeah, no, I'm partially looking forward to it.  It's actually the same week.  I'm doing it the same week as the elections here in the US, and so I'm going to get everything out of the way in one week.  So it'll probably be a stressful one.  So Bartosz, how are you doing?  
+
+Bartosz: I would say I'm great, and I don't worry about the order attribution at all.  To be honest, I'm a bit yellow.  I'm worried.  I am concerned that the underlying issues are not resolvable.  We cannot resolve them quick.  And it will turn out that they are substantial and they require a month of work, which may happen.  And this is what worries me.  Yeah, and that's it.  That's basically it.  I'm trying to do everything we can.  Testing, talking with people, checking stuff.  I'm trying not to upset Gary because he is as scared as hell that he's going to blow up.  That's it.  So I'm yellow with spots of green and the green spots are hope, canals of hope, but I still have a, but everything's going fine.  That's it.  And I think that's it for the call.  Yeah.  As I said, take your time with the questions and you don't have to answer them if you don't feel like it.  And you can also use the questions to send a message to me like, hey, I'm not doing well because this or that or I'm doing well because of this or that.  It's important that everybody feels happy about their work.  And since nobody took the That means that there are reasons why you are here and I would love to know them.  So, thank you for the call and see you around probably on the call with 14.  And I will also, yeah, yeah, thank you.  Bye bye.  
+
+Ibrahim: Thanks all.  
+
+Joel: Yeah.  
+
+Bartosz: Yeah.  Thank you.  Thank you.  you Thank you.  you you Thank you.  you you you you You You You You Thank you.  Thank you.  .  .  Thank you.  Thank you.  You You you you Thank you.  you you You You.  Thank you.  .  .  Thank you.  You You.  

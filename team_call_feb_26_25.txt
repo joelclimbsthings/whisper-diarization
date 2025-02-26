@@ -1,0 +1,187 @@
+﻿Speaker 0:  
+
+Speaker 1: Traffic lights.  It's first on my list.  Actually, it's Joel.  Can you go first?  
+
+Speaker 0: Sure, yeah.  So I am green.  Overall, I think we've gone over a week without anybody in my family being sick, which is a record this season so far.  So doing pretty great in that regard.  Yeah, in terms of work, I feel pretty productive.  Last week, we got most of the scaffolding and a large part of the data flow in place for all three of the orders reports, which are visible on the develop branch and both the new MVP or the new admin and the old admin style.  Although there's a lot of nuances and stuff that need attention, I'm sure.  But yeah, so I was experimenting with adding some tests.  The main priorities are partially being taken care of by Damien.  And I think Gan's going to look at the chart stuff.  Other than I was considering doing some cool down for the rest of this week.  But other than that, I think filtering might be one of the next steps to look at.  Although it's not necessarily the highest priority, because I don't think we're necessarily delivering that for the first deliverable, as we're calling it.  But that was my thought in terms of what to look at next.  
+
+Speaker 1: filtering as in the component or general connection with the component and the filtering API?  
+
+Speaker 0: Initially, it's like the simple filters and actually just kind of doing a little more of a dive into what we want to do, what's required.  I think the data views filtering does not support a number data initially, just based on some observations while I was experimenting with it.  Yeah, I think it will need a little attention for the simple filters and then advanced filters beyond that, which will involve like a whole component basically.  Yeah, either that or I could jump into the chart stuff.  But I think if Gan's not looking at that yet.  
+
+Speaker 1: I've basically told him to do it.  as soon as he can do it and that he will be located.  So, he also told you that he will tell you that he started working on it.  So, but I have not seen that.  So, yeah, I will probably follow up with him on that tomorrow.  Okay.  
+
+Speaker 0: Yeah, I also as soon as we get like the the actual finish orders endpoint or the live orders endpoint.  I'm sure there'll be more to do when we have actual data to work with.  So that's also a little bit of something I'm looking for.  
+
+Speaker 4: So.  
+
+Speaker 1: So what's your, we are, heavily encouraged to deliver something Q1.  And since you are working on the orders and reports, what's your opinion on what was possible there?  
+
+Speaker 0: When is the end of Q1 exactly?  Is that?  
+
+Speaker 1: Not much.  End of our meetup.  
+
+Speaker 0: Okay.  Yeah, I think on the front-end side, are we talking kind of about the first deliverable type of thing?  
+
+Speaker 1: We are first deliverable and potentially more.  
+
+Speaker 0: Yeah, no, I think we're probably in good shape on the front end.  I believe Damien's making good progress, although on the date-time component, that's one bottleneck.  It's hard to work on certain elements of just the report data flow and everything without that in place, since that will probably be changing the query string.  And the query string will probably dictate what we send to the API, which will also kind of flow through the application and managing that.  But I don't foresee an issue at this point of us having the orders and possibly more.  I'm trying to actually design it in a way to where it will be relatively easy to add more reports.  It remains to see exactly how that will turn out.  There will be some work required when we're doing different endpoints and things like that, of course.  But yeah, hopefully I think we're probably in good shape, at least on the front end side.  And a lot of it depends on like, I think filtering will be complicated, especially the segmentation on the back end and things like that.  So it depends a little bit on that implementation, which I haven't looked at too closely yet.  Okay, thank you.  
+
+Speaker 1: And by saying we are encouraged, yeah, we are really encouraged to deliver something we want.  So anything I can help with unblock, push resources, or people towards something that's blocking anything, just please tell me.  Tell me or Garin, of course.  
+
+Speaker 0: Yeah, I mean, We're still working with data views locally in a repo also the new admin stuff and.  I don't think where I think if, um.  
+
+Speaker 1: We're not necessarily, that's not a problem.  Okay, so so, like, uh.  We want those components to be part of the upstream and we are just consuming them from inside.  But for like this release for the internal Q1 something release, we can say, hey, we've built this.  It has the copy of this and that.  We are happy with it because it works and we want to move forward with moving it to upstream and then using it directly from there.  But it's not necessary to have it in this form.  
+
+Speaker 0: Okay, yeah, that makes sense.  And our changes have been relatively minor so far, and I'm actually keeping track in like a change log within the repo in terms of that.  And I think there are changes that were already planned anyways, according to my conversation with Riad.  So yeah, I think with that in mind, then we're looking pretty good on that front.  
+
+Speaker 1: I – okay, on that topic, I want to mention that I will be – me and Jason will be talking to Marin and Riat in upcoming days, and the idea is to talk some things through and understand how we can make the process less painful for them because they are the ones that are having issues with what's happening more than we are.  Yeah.  Yeah.  So We are okay with what they have, they are raising concerns.  Valid, I'm not saying not, it's just we need to move forward and I already said to Gary, told Gary that we are building a product, they are building a platform framework.  So our needs are not exactly aligned on a lot of things, especially speed.  
+
+Speaker 0: yeah yeah exactly our our north stars are definitely not quite the same one in that regard what we're trying to accomplish.  so i and i i do think i understand uh their point of view of course and i think ultimately that's what we want to do although i think i've spent like a few business days just reading through all the discussion on.  uh yes on this conversation that has been continuing and ongoing so It's pretty significant time sink.  So hopefully we can all these guidelines.  
+
+Speaker 1: Yeah.  Yeah.  And we want, we hope to do that actually.  
+
+Speaker 0: Yeah.  
+
+Speaker 1: Tell what's our plan.  move forward and if they'll see what we are doing on the next components and the next components, they will just know like, okay, those guys know what's the drill and how to proceed now and in future.  So we hope to not have those conversations anymore because those conversations are happening again and again and again with the same result and they are about the same thing.  
+
+Speaker 0: Yeah, for sure.  I've had the question in the back of my mind in terms of if we focus a little more on ensuring that our designs are aligned, then the components themselves are kind of implementation details and it should be relatively easy to reconverge.  Arguably it's wasted effort in the meantime.  
+
+Speaker 1: Yes, that's true.  Do you have anything specific in mind?  in terms of designs?  
+
+Speaker 0: Just in terms of like, I mean, like on data views, in terms of if we kind of like have a North Star in terms of the design of data views and what features we want to support and things like that, having local copies where we modify it in the ways that we need and then, but we all have kind of the exact same designs that we're looking at, it should be pretty relatively simple task to like say, okay, now let's just all pick the solution.  That might be a little bit idealistic, but I do think like a more of a focus on the design side makes sense to me, but.  
+
+Speaker 1: Well, the designs are ready.  Yeah, sort of about everything.  And to be honest, if you want to have a feedback to Veronica and tell her like, hey, this is deviating too much from what's in core, maybe just for the sake of simplifying things, we can reconsider and use Watson core and not go too much off road from what's there.  I'm sure that she can reconsider.  She will not, well, be too frustrated if you approach it from the perspective of, hey, the designs are great, but maybe let's keep it for the sake of simplicity and speed.  Just saying, she's open for a discussion.  
+
+Speaker 0: Yeah, no, absolutely.  And I think we'll continue to have that.  I guess I don't know exactly what Veronica or the designers are looking at in terms of coordinating their own efforts.  I mean, is she working with people in core in terms of trying to ensure that her designs are already aligned with core?  
+
+Speaker 1: She is working with Core and there are very conflicting ideas how the plugin should be built, how it should look.  And it's very interesting to observe from the sidelines trying to figure out what to do to actually allow Veronica to move forward and not explode the process.  
+
+Speaker 0: Cool.  Well, so I'm green.  Dima, how are you doing?  
+
+Speaker 3: Thank you.  Well, I'm doing good.  Probably last time I was on the dev meetings three weeks ago or so.  I am Right now I'm green but spent half a day reinstalling Docker and all that stuff just because I made a mistake in TypeScript.  Then I was thinking that's a problem with my setup instead of programming issue.  But now I found that fixed and I reinstalled, nothing is working.  So I went just commented out all my changes and it started to work magically.  Yeah, so that also describes what I'm doing.  I'm working on the expert.  Since we, I talked to Kader for the new UI, we have, we don't have endpoints working.  We have some stubs available from Sandbox only, but I'm working through the real wordpress.com, so pretty lazy to reconfigure everything.  So I'm currently working from the endpoint for the fidget, for the old UI, doing export for it, like a demo version.  It shouldn't be, it should be just a matter of changing the end point to have other experts working.  So when the other APIs are ready, it should be also.  simple to adjust the export to the export dose as well.  
+
+Speaker 1: Or the resolution endpoints will not change.  So yeah, you're right.  Doing that on the resolution endpoints makes sense.  
+
+Speaker 3: Yeah.  I was like a little bit genius on the same TypeScript and add download button to the LDI.  From what I can tell, I have some problems with TypeScript and the way it's coming from that is written.  It's a bit of a science to me, honestly.  So yeah, this is where I am at.  And also I have some Pinterest work.  one ongoing like.  there is a temporary feed file which is growing infinitely and I don't know what's the problem with the website.  it just keeps looping the same 98 items into the file again and again through the day not deleting a temporary feed.  which is not happening on the staging website.  And there is a debug plugin, the one I asked you for the name, which you can turn off and on different plugins on the production, which appear not to work on the website, no matter what I click, like troubleshoot or something, it just doesn't do nothing.  So maybe there is a problem with the website itself somewhere.  It has a ton of stuff.  plugins, different plugins working.  so must be a conflict somewhere.  So I don't know how to fix that at the moment.  
+
+Speaker 1: Upload folder permissions.  I would check that.  
+
+Speaker 3: For the plugin to work?  For the troubleshoot plugin to work?  
+
+Speaker 1: No, for deleting the old feed.  Maybe it's not deleted because you have no right to delete it.  
+
+Speaker 3: I mean that if you look into action scheduler, into scheduled actions, they're scheduled through the day.  They do not end.  they just added and added.  So like feed generation stop is never called, it just generate batch, batch, batch, and goes into the loop.  
+
+Speaker 1: Feed generation stop is never called, but feed generation start is called.  
+
+Speaker 3: Yes.  And then it's batching forever.  
+
+Speaker 1: Okay.  That's weird.  
+
+Speaker 3: Yeah, that's weird.  Also, I saw like six registered feed actions scheduled on the same time, like six duplicates.  
+
+Speaker 1: Is there a Chrome plugin on that website that may be affecting something?  
+
+Speaker 3: Yeah, I believe so.  And then they have that message like, you is really busy and I cannot start postponing your tasks and so on.  
+
+Speaker 1: Okay.  If you have access to the website, yes?  
+
+Speaker 3: Right.  
+
+Speaker 1: If you will not figure something out, you can ping me and I don't think you're right to look as well.  I'm not saying that I know something more.  Maybe just another set of eyes.  
+
+Speaker 3: Okay.  And another thing you want is to have a website which deletes the feed every, I don't know, at least every day.  
+
+Speaker 1: Can you like merge those two and call it a day?  The other one will delete it and you'll be good.  
+
+Speaker 4: Yeah, probably.  
+
+Speaker 3: Okay, so that's it.  I don't know if I'll be able to start with any cooldown tasks, so probably not.  That's it for me.  So Nima, do you want to go next?  
+
+Speaker 4: Yeah.  This is a new headphone.  I'm sorry, I had a question for Dima.  For the exports, are we using a new endpoint for exports or is it the same endpoints that show the charts and tables?  
+
+Speaker 3: We use For the export to fetch data, we use the same endpoint which fetches it for the table.  Oh, okay.  
+
+Speaker 4: So you basically just call every date and then, uh, aggregate them on the front-end side?  Yeah.  
+
+Speaker 3: So how Core export cognitive works, uh, it gets the value.  If, when you click download, it gets all the value of filters and sortings you have on the page for the data table and it pushes it into a class which creates as an action scheduled action with that query parameters passed into it.  And then it fetches data the same way like when you click through pages with the same query parameters to the end point and fetches the data in the same sort in an ordering as it was on the page when someone clicked the download.  So yeah, basically no any new end points needed just to trigger the same one which fetches that at the moment.  
+
+Speaker 4: Have you explored if it'd be better to do this on the WPCOM side, like just call an endpoint just specific to generating the export and then WPCOM API handles this like async task and aggregates the data and then prepares a zip and then sends an email or just maybe just send this to, Just a different API to check the status of the export.  
+
+Speaker 3: Yeah, I don't know.  Like for now, nobody decided, so I decided to just call the WordPress.com and point through the proxy Justin created and create the file on the website, not on the WordPress.com.  But yeah, why not?  We can do anything.  Just I don't know which is better.  
+
+Speaker 4: Yeah, I wonder like what would be the advantages of doing that versus the doing on the plugin side?  
+
+Speaker 3: Yeah, maybe neither.  
+
+Speaker 4: Something we can explore.  All right, thank you.  So I'm yellowish greenish.  And so I'm basically going over Abrams PR for building the data store for orders API.  And it's a little bit rough and undocumented.  So I'm just trying to get, find my way through it and trying to basically change the data structure that is returned from the data store and map it to what I've already built for the orders API and what Joel is working on for the front end as part of the mock API that we have.  And I think I've made good progress and I should be able to get it ready either today or maximum tomorrow.  So I think, Joel, you can switch over to this branch after that one is ready instead of the mock endpoint.  And yeah, that's, that's basically it.  
+
+Speaker 1: And basically you're saying that at least hypothetically and pending adjustments, that would be it for the API?  
+
+Speaker 4: Well for the API, yes, but we still don't have filters.  I don't know if that's like the plan for the initial deliverable, but we don't have filters.  And also the API is like not that the data store is like, pretty complex.  I don't know if that's like how we're going to go with it.  I haven't still had the chance to speak with Ibrahim about this one, but we're still like using the same approach as the legacy analytics from WooCore.  And I don't know if this much complexity is needed, actually.  What I originally thought about was that we would create a basic denormalized table and we could query that table right away.  But with the structure that is in place right now, we would still need to make multiple joins to build the filters.  And I think performance-wise that would None.  That wouldn't be the best idea, especially if the store has a lot of data, a lot of orders.  So maybe that's something that we can revisit later or something that we can dive into right away.  And one of the problems with it being complex is that I wanted to suggest like we have four different categories of reports that we have to work on like sales and I don't know the rest of revenue or something.  And I wanted to suggest that like each of us work on one category and basically try to build one category of the reports.  But with the complexity that I've seen right now it would take like a new dev to at least like two or four days or at least a week to just get their head around this code and then see where it is.  So I mean, if it would be like simpler, if it would be more documented, it would be easier for other devs to jump in and build the other reports.  Because I don't know if in three weeks we'll be able to build all four categories of reports.  I don't know if that's like part of the MVP or part of the first delivery or not.  
+
+Speaker 1: But it's part of the MVP.  It's probably not going to happen for P1.  
+
+Speaker 4: Okay.  Um, so yeah, I think the orders would be ready soon, but for the other reports, I'm not very confident that we'll be able to build it in two weeks.  Yeah.  And, uh, yeah, I think that's it on my side.  Uh, Justin, do you want to go next?  
+
+Speaker 2: Yeah, sure.  Thanks.  I've just been kind of bouncing around on stuff.  I'm green.  I'm AFK the last two days of this week.  And I've been, I took on Breso's port of rotation for the beginning of the week.  So I've been doing a little bit of port of stuff.  I've been trying to get to the tracking and performance tracking.  I'll update that PR, I mean that project thread later this evening.  And then I should be able to get a PR up for it either on Tuesday or Wednesday, I think.  Start looking into both usage tracking and performance tracking.  And then also maybe consider error, surfacing errors as well.  Have a little bit of error logging or providing information about any errors or issues that come up as well.  So we can proactively address those if they start to crop up.  And then besides that, I've been doing very minimal stuff for the, for the meetup.  Fortunately, it's more or less sorted, even though we've decided that we might invite more people as an extra surprise.  And then besides that, and then I'm doing the last thing I have to do for the Porter is doing the release of the of the widget and the plugin.  So I'm going through that right now.  I'm doing, like I'm doing a release right now and I will probably ping the group when I need the deploy to be done for the widget.  And so I'm still on the outside looking in on that.  
+
+Speaker 1: We need to get you some PRs.  Those are PRs now.  That's actually you.  
+
+Speaker 2: Yeah, that's on my list for March.  I don't have to, I can just release whenever I feel like it.  
+
+Speaker 1: And the rules have changed for the good.  You don't need to have right access to create PRs in the hour and a half because previously you had to have right access to create PRs and to create PR.  and to have right access you have to merge, you have to have three merge PRs, catch 22.  That's right.  Okay.  That's good.  
+
+Speaker 2: And I think that's it for me.  Pretty straightforward.  
+
+Speaker 1: And how about you Bartosz?  Thanks.  I'm green.  I've spent the last two days back and forth with the legal team on the new Pinterest agreement.  We've made very good progress and we are aligned on basically everything.  On the last day, Pinterest sent a revised version where we had to basically say no to half of the new things that they've added.  which is more than normal from what I see in terms of the negotiation, but they actually tried to put more work on us with the same momentary value applied to the contract and we said no.  And after the contract will be signed, if it's going to be signed in the form that we wanted, we are actually not required to do any work.  that work because before the contract, actually I've asked Rodrik and Rodrik did all the necessary work.  So when the contract will be signed, we can just release them.  We are good.  Besides that, lots of discussions with Kari and Veronica on how to push forward and how to present our slowdown.  Yeah, that's very challenging because the perception is that the work is going slow.  But there are various reasons to that and we have to present those so people who perceive that we work as slow are aware that this is happening.  Yeah.  What else?  I did some things for the meetup rental space contract.  Yeah, I was asked to inform Malta Design Clusters so they will go to our portal, create a vendor and then send an email.  Yeah, so I actually said that makes no sense.  I talked to Dominique, Dominique Russo and told her like, hey, we don't have time.  And she's like, OK, that's a hundred just for yourself and for the person.  Actually, Jason will be doing that.  He said that he's happy to.  OK, so.  we should have the payments this week and the contract sent this week and we should get.  So we'll have the space and that's it.  And yeah, actually sorry for the late addition to the meetup Justin, I hope it's not a big deal.  Brace yourself, Grace will probably join us.  Okay, okay.  I've asked her and she like, hey, I just need to check the tickets for her and she will figure it out when she will be able to join, but she is not sure yet.  
+
+Speaker 2: Okay, we might stick her in like an Airbnb then.  
+
+Speaker 1: So I will probably tell her to organize it herself.  
+
+Speaker 2: Do that, Adam.  That would work.  I mean, I don't mind.  
+
+Speaker 1: Yeah, whatever.  If she ends up in Valletta, she's good.  
+
+Speaker 2: Yeah.  Right now, there's a bunch of relatively decent options for a single person to be amazing in Valletta.  
+
+Speaker 1: Yeah.  And I think we are good with Valletta if she even chooses something a bit above.  
+
+Speaker 2: That's true.  There's not a lot of options, though.  
+
+Speaker 1: It's surprising.  That's, I think that's it.  That's it.  I have nothing else.  And there's nothing from the agenda, if I remember correctly.  
+
+Speaker 2: I might have added one thing.  There's an issue in the WooCommerce Core that it says and asking whether it would make sense to put brand at a variation level.  But I don't think that makes sense.  I think conceptually a product should be should have one brand.  And then and all the sub products should be variations, right?  I mean, all the variants are variants based on attributes not on brand variations.  
+
+Speaker 1: That's okay.  I That's basically conflating brand with and variation and category.  
+
+Speaker 2: Yeah.  
+
+Speaker 1: That makes no sense, right?  
+
+Speaker 2: No, I don't think it makes sense.  He says he done it in the past, but.  
+
+Speaker 1: Yeah, say no, move on.  
+
+Speaker 2: Yeah, yeah, I think.  Not sure how how much.  we just close the issues and say.  Well, send them to the ideas board.  
+
+Speaker 1: There is one person with a very specific NCS.  
+
+Speaker 2: Yeah, I was just, conceptually, it doesn't make sense, making sure they would see that kind of the same way.  
+
+Speaker 1: Maybe they are not aware how categories and taxonomy works.  Maybe they want to organize their the catalog in a certain way and now they are thinking about having a master product, I don't know, shoes and then variations.  
+
+Speaker 2: That's it.  They said like they want to have like higher end a shirt and then have a higher end brand.  So in like t-shirt have like Hugo Boss and then Nike and then Fruit of the Loom.  So they're different brands, but I don't think that makes much sense.  It could probably be better to categorize them as t-shirts.  These categories, right?  
+
+Speaker 1: Yeah, maybe just make that suggestion and close up to pick up the issue.  Okay.  Good.  Anybody?  Something you want to discuss, mention?  Something's on your mind, something's bothering you.  I can help with something.  No?  Nothing.  Yeah, I have a feeling that I'm more and more useless.  
+
+Speaker 2: Why?  I think it's the other way around.  If we don't have anything to complain about, you're doing a pretty good job.  
+
+Speaker 1: Thank you for the kind words.  I will sleep better.  Yeah.  Just a quick off topic.  Anybody watching surveillance?  
+
+Speaker 4: No.  
+
+Speaker 3: On the list.  
+
+Speaker 1: Second season?  Yeah.  Yeah.  Anytime milkshake says, Ms.  Wong, I see grace.  Yeah.  Yeah.  Good show.  Watch it.  Yeah.  Okay.  Thanks for the call.  See you in Slack.  
